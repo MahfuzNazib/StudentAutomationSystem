@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Learning\\StudentAutomationSystem\\StudentAutomationSystem\\StudentAutomationSystem.csproj": {}
+    "E:\\Learning\\ASP.NET\\StudentAutomationSystem\\StudentAutomationSystem\\StudentAutomationSystem.csproj": {}
   },
   "projects": {
-    "E:\\Learning\\StudentAutomationSystem\\StudentAutomationSystem\\StudentAutomationSystem.csproj": {
+    "E:\\Learning\\ASP.NET\\StudentAutomationSystem\\StudentAutomationSystem\\StudentAutomationSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Learning\\StudentAutomationSystem\\StudentAutomationSystem\\StudentAutomationSystem.csproj",
+        "projectUniqueName": "E:\\Learning\\ASP.NET\\StudentAutomationSystem\\StudentAutomationSystem\\StudentAutomationSystem.csproj",
         "projectName": "StudentAutomationSystem",
-        "projectPath": "E:\\Learning\\StudentAutomationSystem\\StudentAutomationSystem\\StudentAutomationSystem.csproj",
-        "packagesPath": "C:\\Users\\Nazib.m\\.nuget\\packages\\",
-        "outputPath": "E:\\Learning\\StudentAutomationSystem\\StudentAutomationSystem\\obj\\",
+        "projectPath": "E:\\Learning\\ASP.NET\\StudentAutomationSystem\\StudentAutomationSystem\\StudentAutomationSystem.csproj",
+        "packagesPath": "C:\\Users\\nazib\\.nuget\\packages\\",
+        "outputPath": "E:\\Learning\\ASP.NET\\StudentAutomationSystem\\StudentAutomationSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nazib.m\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nazib\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,7 +42,7 @@
           "dependencies": {
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.12, )"
+              "version": "[6.0.13, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

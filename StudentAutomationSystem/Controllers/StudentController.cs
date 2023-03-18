@@ -23,7 +23,7 @@ namespace StudentAutomationSystem.Controllers
         }
 
         // Create New Student
-        public string CreateStudent(Student student)
+        public ActionResult CreateStudent(Student student)
         {
             SqlConnection connection = new SqlConnection(connectionString);
             
@@ -37,23 +37,48 @@ namespace StudentAutomationSystem.Controllers
             if(cmd.ExecuteNonQuery() > 0)
             {
                 connection.Close();
-                return "Success";
+                return RedirectToAction("AllStudents");
             }
-            connection.Close();
-            return "Failed";
+            return View();
         }
 
         public ActionResult AllStudents()
         {
+            List<Student> students = GetStudents();
+            return View(students);
+        }
+
+        public ActionResult AddNewStudent()
+        {
+            
             return View();
         }
 
         public List<Student> GetStudents()
         {
+            List<Student> students = new List<Student>();
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             string sql = "SELECT * FROM Students";
-            SqlCommand cmd = new SqlCommand(sql, connection);
+            using (SqlCommand cmd = new SqlCommand(sql, connection))
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        Student student = new Student();
+                        student.StudentCode = reader["StudentCode"].ToString();
+                        student.StudentName = reader["StudentName"].ToString();
+                        student.StudentEmail = reader["StudentEmail"].ToString();
+                        student.StudentPhone = reader["StudentPhone"].ToString();
+                        student.StudentAddress = reader["StudentAddress"].ToString();
+
+                        students.Add(student);  
+                    }
+                }
+            }
+
+            return students;
         }
     }
 }
