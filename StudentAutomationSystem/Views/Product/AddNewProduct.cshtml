@@ -1,0 +1,39 @@
+﻿@model StudentAutomationSystem.Models.Product.Product
+@{
+    ViewData["Title"] = "AddNewProduct";
+}
+
+<h1>AddNewProduct</h1>
+
+
+@using (Html.BeginForm("CreateNewProduct", "Product", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Product Code</td>
+            <td>@Html.TextBoxFor(product => product.ProductCode)</td>
+        </tr>
+
+        <tr>
+            <td>Product Name</td>
+            <td>@Html.TextBoxFor(product => product.ProductName)</td>
+        </tr>
+
+        <tr>
+            <td>Product Description</td>
+            <td>@Html.TextBoxFor(product => product.ProductDescription)</td>
+        </tr>
+
+        <tr>
+            <td>Price</td>
+            <td>@Html.TextBoxFor(product => product.Price)</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" class="btn btn-success btn-sm" value="Add Product">
+            </td>
+        </tr>
+    </table>
+}

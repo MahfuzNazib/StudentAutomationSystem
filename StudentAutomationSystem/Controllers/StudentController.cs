@@ -16,7 +16,6 @@ namespace StudentAutomationSystem.Controllers
             connectionString = _configuration.GetConnectionString("DefaultConnection");
         }
 
-
         public IActionResult Index()
         {
             return View();

@@ -1,0 +1,55 @@
+﻿@model List<StudentAutomationSystem.Models.Product.Product>
+@{
+    ViewData["Title"] = "AllProducts";
+}
+
+<h1>AllProducts</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <strong>All Students</strong>
+        </div>
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-info">@TempData["Message"]</div>
+        }
+        <div class="col-md-6">
+            <a asp-controller="Product" asp-action="AddNewProduct" class="btn btn-info float-right">Add New</a>
+        </div>
+    </div>
+
+    <!-- All Student List -->
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Product Code</th>
+                        <th>Product Name</th>
+                        <th>Prodct Description</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var product in Model)
+                    {
+                        <tr>
+                            <td>@product.ProductName</td>
+                            <td>@product.ProductDescription</td>
+                            <td>@product.Price</td>
+                            <td>
+                                <a class="btn btn-info btn-sm">View</a>
+                                <a class="btn btn-warning btn-sm">Edit</a>
+                                <a class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
