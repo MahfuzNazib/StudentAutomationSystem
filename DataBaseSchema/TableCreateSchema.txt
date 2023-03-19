@@ -1,0 +1,17 @@
+USE [StudentAutomationDB]
+GO
+
+/****** Object:  Table [dbo].[Products]    Script Date: 3/19/2023 5:53:23 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Products](
+	[ProductId] [int] IDENTITY(1,1) NOT NULL,
+	[ProductName] [nvarchar](50) NOT NULL,
+	[ProductDescription] [nvarchar](150) NULL,
+	[Price] [float] NOT NULL
+) ON [PRIMARY]
+GO
