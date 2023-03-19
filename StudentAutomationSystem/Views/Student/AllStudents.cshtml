@@ -1,4 +1,5 @@
-﻿
+﻿@model List<Student>
+
 @{
     ViewData["Title"] = "AllStudents";
 }
@@ -10,7 +11,7 @@
         </div>
 
         <div class="col-md-6">
-            <button class="btn btn-info">Add New</button>
+            <a asp-controller="Student" asp-action="AddNewStudent" class="btn btn-info float-right">Add New</a>
         </div>
     </div>
 
@@ -20,29 +21,31 @@
             <table class="table table-sm table-bordered">
                 <thead>
                     <tr>
-                        <th>Sl No</th>
                         <th>Student Code</th>
                         <th>Student Name</th>
                         <th>Student Contact</th>
+                        <th>Student Email</th>
                         <th>Action</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>01</td>
-                        <td>ST-1011</td>
-                        <td>Nazib Mahfuz</td>
-                        <td>01777127618</td>
-                        <td>
-                            <button class="btn btn-info btn-sm">View</button>
-                            <button class="btn btn-warning btn-sm">Edit</button>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                    </tr>
+                    @foreach (var student in Model)
+                    {
+                        <tr>
+                            <td>@student.StudentCode</td>
+                            <td>@student.StudentName</td>
+                            <td>@student.StudentPhone</td>
+                            <td>@student.StudentEmail</td>
+                            <td>
+                                <a class="btn btn-info btn-sm">View</a>
+                                <a class="btn btn-warning btn-sm">Edit</a>
+                                <a class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-

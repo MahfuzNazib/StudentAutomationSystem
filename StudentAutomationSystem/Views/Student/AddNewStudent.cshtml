@@ -1,0 +1,44 @@
+﻿@model StudentAutomationSystem.Models.Student
+@{
+    ViewData["Title"] = "AddNewStudent";
+}
+
+<h5>AddNewStudent</h5>
+
+@using (Html.BeginForm("CreateStudent","Student", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Student Code</td>
+            <td>@Html.TextBoxFor(student => student.StudentCode)</td>
+        </tr>
+
+        <tr>
+            <td>Student Name</td>
+            <td>@Html.TextBoxFor(student => student.StudentName)</td>
+        </tr>
+
+        <tr>
+            <td>Contact No</td>
+            <td>@Html.TextBoxFor(student => student.StudentPhone)</td>
+        </tr>
+
+        <tr>
+            <td>Student Email</td>
+            <td>@Html.TextBoxFor(student => student.StudentEmail)</td>
+        </tr>
+
+        <tr>
+            <td>Student Address</td>
+            <td>@Html.TextAreaFor(student => student.StudentAddress)</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" class="btn btn-success btn-sm" value="Save Student">
+            </td>
+        </tr>
+    </table>
+}
+
